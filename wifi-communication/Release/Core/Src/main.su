@@ -1,0 +1,9 @@
+main.c:154:6:SystemClock_Config	80	static
+main.c:502:6:Display_Points	56	static
+main.c:513:6:Display_Time	48	static
+main.c:447:6:Show_Question	1056	static
+main.c:522:6:Show_Feedback	32	static
+main.c:566:6:Display_Answer	24	static
+main.c:549:6:Get_Answer	16	static
+main.c:94:5:main	56	static
+main.c:578:6:Error_Handler	0	static

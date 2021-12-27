@@ -1,0 +1,16 @@
+main.c:94:5:main	8	static
+main.c:150:6:SystemClock_Config	72	static
+main.c:186:13:MX_TIM1_Init	32	static
+main.c:229:13:MX_TIM2_Init	32	static
+main.c:271:13:MX_TIM3_Init	32	static
+main.c:313:13:MX_USART1_UART_Init	8	static
+main.c:344:13:MX_USART2_UART_Init	8	static
+main.c:373:13:MX_DMA_Init	16	static
+main.c:393:13:MX_GPIO_Init	40	static
+main.c:443:6:Show_Question	1048	static
+main.c:498:6:Display_Points	48	static
+main.c:509:6:Display_Time	48	static
+main.c:518:6:Show_Feedback	24	static
+main.c:545:6:Get_Answer	16	static
+main.c:560:6:Display_Answer	24	static
+main.c:572:6:Error_Handler	4	static
