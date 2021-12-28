@@ -546,13 +546,15 @@ void Get_Answer() {
 	char answer[5];
 	if (HAL_GPIO_ReadPin(KEY0_GPIO_Port, KEY0_Pin) == GPIO_PIN_RESET) {
 		sprintf(answer, "0");
-		send_message((uint8_t*) answer);
 		Display_Answer(answer);
+		send_message((uint8_t*) answer);
+
 		mode=2;
 	} else if (HAL_GPIO_ReadPin(KEY1_GPIO_Port, KEY1_Pin) == GPIO_PIN_RESET) {
 		sprintf(answer, "1");
-		send_message((uint8_t*) answer);
 		Display_Answer(answer);
+		send_message((uint8_t*) answer);
+
 		mode=2;
 	}
 }

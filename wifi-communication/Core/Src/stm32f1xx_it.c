@@ -487,6 +487,8 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 			__HAL_UART_CLEAR_IDLEFLAG(&huart2);
 			HAL_UART_DMAStop(&huart2);
 			uint8_t data_length = 2048 - __HAL_DMA_GET_COUNTER(&hdma_usart2_rx);
+			HAL_UART_Transmit(&huart1, (uint8_t*) "\r\nreceive usarrt2\r\n", 20, 0xffff);
+			HAL_UART_Transmit(&huart1, (uint8_t*)uart2_rx_buffer, strlen(uart2_rx_buffer), 0xffff);
 			if (strncmp(uart2_rx_buffer, "WIFI CONNECTED\r\n", 16) == 0
 					&& connect_flag == 0) {
 				connect_flag = 1;
@@ -540,7 +542,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 					complete_recv = 1;
 					received_Length = data_length;
 
-					if (complete_recv == 1 && mode == 0) {
+					if (strstr(received_Data,"Q:")!=NULL) {
 						//HAL_UART_Transmit(&huart1, (uint8_t*) test, 20, 0xffff);
 						HAL_UART_Transmit(&huart1, (uint8_t*) received_Data,
 								received_Length, 0xffff);
@@ -548,7 +550,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 						HAL_TIM_Base_Start_IT(&htim3);
 						mode = 1;
 						complete_recv = 0;
-					} else if (complete_recv == 1) {
+					} else if (strstr(received_Data,"F:")!=NULL) {
 						HAL_UART_Transmit(&huart1, (uint8_t*) received_Data,
 								received_Length, 0xffff);
 						Show_Feedback();
@@ -609,6 +611,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 						data_length, 0xffff);
 			}
 			memset(uart2_rx_buffer, 0, data_length);
+			memset(received_Data,0,2048);
 			data_length = 0;
 			HAL_UART_Receive_DMA(&huart2, (uint8_t*) uart2_rx_buffer, 2048);
 		}

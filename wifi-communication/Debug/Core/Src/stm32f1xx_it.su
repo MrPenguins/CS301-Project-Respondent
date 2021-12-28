@@ -18,9 +18,9 @@ stm32f1xx_it.c:313:6:EXTI15_10_IRQHandler	8	static
 stm32f1xx_it.c:324:6:HAL_GPIO_EXTI_Callback	16	static
 stm32f1xx_it.c:387:6:HAL_TIM_PeriodElapsedCallback	16	static
 stm32f1xx_it.c:424:6:HAL_UART_RxCpltCallback	40	static
-stm32f1xx_it.c:617:6:send_cmd	16	static
-stm32f1xx_it.c:622:6:send_message	128	static
-stm32f1xx_it.c:632:6:send_msg_uart1	16	static
-stm32f1xx_it.c:637:6:init_var	8	static
-stm32f1xx_it.c:648:6:connect_to_wifi	8	static
-stm32f1xx_it.c:659:6:init_server	8	static
+stm32f1xx_it.c:621:6:send_cmd	16	static
+stm32f1xx_it.c:626:6:send_message	128	static
+stm32f1xx_it.c:636:6:send_msg_uart1	16	static
+stm32f1xx_it.c:641:6:init_var	8	static
+stm32f1xx_it.c:652:6:connect_to_wifi	8	static
+stm32f1xx_it.c:663:6:init_server	8	static
